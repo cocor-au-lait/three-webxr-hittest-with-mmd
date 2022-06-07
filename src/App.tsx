@@ -13,7 +13,9 @@ const ARApp = () => {
     if (!ref.current) {
       return;
     }
-    const { position, quaternion } = ref.current;
+    const { position, quaternion, scale } = ref.current;
+    // FIXME: Following comment does not work.
+    // hitMatrix.decompose(position, quaternion, scale);
     hitMatrix.decompose(position, quaternion, new Vector3(0.1, 0.1, 0.1));
   });
 
@@ -23,7 +25,7 @@ const ARApp = () => {
 const App = () => {
   useEffect(() => {
     const vConsole = new VConsole({ theme: "dark" });
-    console.log(new Vector3(1, 1, 1).multiplyScalar(0.01));
+
     return () => {
       vConsole.destroy();
     };
