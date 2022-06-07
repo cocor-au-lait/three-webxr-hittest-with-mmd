@@ -7,7 +7,7 @@ import VConsole from "vconsole";
 
 const ARApp = () => {
   const ref = useRef<Mesh>(null);
-  const nodes = useLoader(MMDLoader, "/model/柴田式初音ミク.pmx");
+  const nodes = useLoader(MMDLoader, "model/柴田式初音ミク.pmx");
 
   useHitTest((hitMatrix) => {
     if (!ref.current) {
